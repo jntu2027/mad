@@ -1,175 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <!-- Username -->
-    <TextView
-        android:id="@+id/label_username"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Username"
-        android:textSize="16sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/username"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter username"
-        app:layout_constraintTop_toBottomOf="@id/label_username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- Password -->
-    <TextView
-        android:id="@+id/label_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/username"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter password"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/label_password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- Address -->
-    <TextView
-        android:id="@+id/label_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Address"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/password"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <EditText
-        android:id="@+id/address"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter address"
-        app:layout_constraintTop_toBottomOf="@id/label_address"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- Gender -->
-    <TextView
-        android:id="@+id/label_gender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Gender"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/address"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <RadioGroup
-        android:id="@+id/RadioGender"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/label_gender"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <RadioButton
-            android:id="@+id/radiomale"
+        <TextView
+            android:id="@+id/label_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male" />
+            android:text="Username"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <RadioButton
-            android:id="@+id/radiofemale"
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter username"
+            app:layout_constraintTop_toBottomOf="@id/label_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/label_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Female" />
+            android:text="Password"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/username"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
-        <RadioButton
-            android:id="@+id/radioother"
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            app:layout_constraintTop_toBottomOf="@id/label_password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/label_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Other" />
-    </RadioGroup>
+            android:text="Address"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
-    <!-- Age -->
-    <TextView
-        android:id="@+id/label_age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/RadioGender"
-        app:layout_constraintStart_toStartOf="parent"/>
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter address"
+            app:layout_constraintTop_toBottomOf="@id/label_address"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
 
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter age"
-        android:inputType="number"
-        app:layout_constraintTop_toBottomOf="@id/label_age"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/label_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/address"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
-    <!-- DOB -->
-    <TextView
-        android:id="@+id/label_dob"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Date of Birth"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/age"
-        app:layout_constraintStart_toStartOf="parent"/>
+        <RadioGroup
+            android:id="@+id/RadioGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/label_gender"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp">
 
-    <EditText
-        android:id="@+id/date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="dd/mm/yyyy"
-        android:inputType="date"
-        app:layout_constraintTop_toBottomOf="@id/label_dob"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+            <RadioButton
+                android:id="@+id/radiomale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male" />
 
-    <!-- State -->
-    <TextView
-        android:id="@+id/label_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="State"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/date"
-        app:layout_constraintStart_toStartOf="parent"/>
+            <RadioButton
+                android:id="@+id/radiofemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female" />
 
-    <EditText
-        android:id="@+id/state"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Enter state"
-        app:layout_constraintTop_toBottomOf="@id/label_state"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+            <RadioButton
+                android:id="@+id/radioother"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other" />
+        </RadioGroup>
 
-    <!-- Submit Button -->
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        app:layout_constraintTop_toBottomOf="@id/state"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/label_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/RadioGender"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter age"
+            android:inputType="number"
+            app:layout_constraintTop_toBottomOf="@id/label_age"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/label_dob"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Birth"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/age"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <DatePicker
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/label_dob"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/label_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="State"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/date"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/state"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/label_state"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            app:layout_constraintTop_toBottomOf="@id/state"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
