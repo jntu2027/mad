@@ -1,14 +1,14 @@
-package com.example.usernamepasswordaddressgenderradiobuttonsagedateofbirthstateandasubmitbutton
-
+package com.example.kotlin_9
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Spinner
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +21,15 @@ class MainActivity : AppCompatActivity() {
         val address: EditText = findViewById(R.id.address)
         val genderradio: RadioGroup = findViewById(R.id.RadioGender)
         val age: EditText = findViewById(R.id.age)
-        val DOB: EditText = findViewById(R.id.date)
-        val state: EditText = findViewById(R.id.state)
+        val DOB: DatePicker = findViewById(R.id.date)
+        val state: Spinner = findViewById(R.id.state)
         val button: Button = findViewById(R.id.button)
+
+        val states = listOf("Select State" , "Telangana" , "Andhra Pradesh" , "UP" , "Bihar")
+
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, states)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        state.adapter = adapter
 
         button.setOnClickListener {
             val selectedId = genderradio.checkedRadioButtonId
@@ -38,8 +44,8 @@ class MainActivity : AppCompatActivity() {
             println("Address : ${address.text}")
             println("Gender : $gender")
             println("Age : ${age.text}")
-            println("DOB : ${DOB.text}")
-            println("State : ${state.text}")
+            println("DOB : ${DOB.dayOfMonth}/${DOB.month + 1}/${DOB.year}")
+            println("State : ${state.selectedItem.toString()}")
         }
     }
 }
